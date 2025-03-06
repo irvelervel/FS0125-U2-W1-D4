@@ -80,6 +80,81 @@
         }
       }
 
+      @keyframes box-pulsing {
+        0% {
+          transform: translate(0px) scale(1);
+        }
+
+        12.5% {
+          transform: translate(100px) scale(1.15);
+        }
+
+        25% {
+          transform: translate(200px) scale(1.3);
+        }
+
+        37.5% {
+          transform: translate(300px) scale(1.15);
+        }
+
+        50% {
+          transform: translate(400px) scale(1);
+        }
+
+        62.5% {
+          transform: translate(300px) scale(0.85);
+        }
+
+        75% {
+          transform: translate(200px) scale(0.7);
+        }
+
+        87.5% {
+          transform: translate(100px) scale(0.85);
+        }
+
+        100% {
+          transform: translate(0px) scale(1);
+        }
+      }
+
+      @keyframes box-moving-pulsing {
+        0% {
+          transform: translate(0px) scale(1);
+        }
+        12.5% {
+          transform: translate(200px) scale(1);
+        }
+
+        25% {
+          transform: translate(200px) scale(1.15);
+        }
+
+        37.5% {
+          transform: translate(200px) scale(1.3);
+        }
+
+        50% {
+          transform: translate(200px) scale(1);
+        }
+
+        62.5% {
+          transform: translate(200px) scale(0.85);
+        }
+
+        75% {
+          transform: translate(200px) scale(0.7);
+        }
+
+        87.5% {
+          transform: translate(200px) scale(1);
+        }
+
+        100% {
+          transform: translate(0px) scale(1);
+        }
+      }
+
       .ex-1 {
         /* animation: nome durata curva-di-accelerazione ritardo numero-ripetizioni */
         animation: change-color 5s linear 0s forwards;
@@ -103,6 +178,20 @@
         color: white;
         animation: box-moving-circular 4s linear 0s infinite;
       }
+
+      .ex-5 {
+        background-color: brown;
+        color: white;
+      }
+
+      .ex-6 {
+        background-color: pink;
+        animation: box-moving-pulsing 4s linear 0s infinite;
+      }
+
+      .animate {
+        animation: box-pulsing 5s linear 0s infinite;
+      }
     </style>
   </head>
   <body>
@@ -115,16 +204,34 @@
         <article class="box ex-1">
           <p>CAMBIO COLORE</p>
         </article>
+      </section>
+      <section>
+        <button id="start-button">START</button>
+        <article class="box ex-5">
+          <p>ANIMAZIONE VIA JS!</p>
+        </article>
+      </section>
+      <section>
         <article class="box ex-2">
           <p>CAMBIO COLORE CIRCOLARE</p>
         </article>
+      </section>
+      <section>
         <article class="box ex-3">
           <p>SPOSTAMENTO SX->DX</p>
         </article>
+      </section>
+      <section>
         <article class="box ex-4">
           <p>SPOSTAMENTO SX->DX->SX</p>
         </article>
       </section>
+      <section>
+        <article class="box ex-6">
+          <p>SPOSTAMENTO + PULSING</p>
+        </article>
+      </section>
     </main>
+    <script src="./js/animation.js"></script>
   </body>
 </html>

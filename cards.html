@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated CARDS</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #cards-container {
+        display: flex;
+      }
+
+      .card {
+        width: 200px;
+        border: 1px solid black;
+        border-radius: 20px;
+        background-color: gray;
+        color: white;
+        padding: 0 1em;
+      }
+
+      #card-1 {
+        transform: rotate(-15deg) translate(30px, 50px);
+        z-index: 1;
+      }
+
+      #card-2 {
+        z-index: 2;
+      }
+
+      #card-3 {
+        transform: rotate(15deg) translate(-30px, 50px);
+        z-index: 3;
+      }
+
+      #card-1:hover,
+      #card-2:hover,
+      #card-3:hover {
+        transform: rotate(0deg) scale(1.1);
+        z-index: 5;
+        background-color: goldenrod;
+      }
+
+      #card-1,
+      #card-2,
+      #card-3 {
+        transition: all 0.25s linear 0s;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="cards-container">
+        <article class="card" id="card-1">
+          <h4>Card 1</h4>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
+            repellendus porro incidunt. Laborum commodi a, deleniti cumque,
+            tempora quisquam culpa magni magnam voluptatibus corrupti inventore
+            exercitationem aperiam. Numquam, distinctio ipsum? Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Ipsam repellendus
+            porro incidunt. Laborum commodi a, deleniti cumque, tempora quisquam
+            culpa magni magnam voluptatibus corrupti inventore exercitationem
+            aperiam. Numquam, distinctio ipsum? Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Ipsam repellendus porro incidunt.
+          </p>
+        </article>
+        <article class="card" id="card-2">
+          <h4>Card 2</h4>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
+            repellendus porro incidunt. Laborum commodi a, deleniti cumque,
+            tempora quisquam culpa magni magnam voluptatibus corrupti inventore
+            exercitationem aperiam. Numquam, distinctio ipsum? Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Ipsam repellendus
+            porro incidunt. Laborum commodi a, deleniti cumque, tempora quisquam
+            culpa magni magnam voluptatibus corrupti inventore exercitationem
+            aperiam. Numquam, distinctio ipsum? Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Ipsam repellendus porro incidunt.
+          </p>
+        </article>
+        <article class="card" id="card-3">
+          <h4>Card 3</h4>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
+            repellendus porro incidunt. Laborum commodi a, deleniti cumque,
+            tempora quisquam culpa magni magnam voluptatibus corrupti inventore
+            exercitationem aperiam. Numquam, distinctio ipsum? Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Ipsam repellendus
+            porro incidunt. Laborum commodi a, deleniti cumque, tempora quisquam
+            culpa magni magnam voluptatibus corrupti inventore exercitationem
+            aperiam. Numquam, distinctio ipsum? Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Ipsam repellendus porro incidunt.
+          </p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
