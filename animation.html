@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proprietà ANIMATION in CSS</title>
+    <style>
+      body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      .box {
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2em;
+        text-align: center;
+      }
+
+      /* DEFINIAMO UN'ANIMAZIONE IN CSS */
+      @keyframes change-color {
+        0% {
+          /* sono gli stati iniziali della mia animazione */
+          background-color: firebrick;
+        }
+
+        50% {
+          background-color: limegreen;
+        }
+
+        100% {
+          /* sono gli stati finali della mia animazione */
+          background-color: lightblue;
+        }
+      }
+
+      @keyframes change-color-circular {
+        0% {
+          /* sono gli stati iniziali della mia animazione */
+          background-color: firebrick;
+        }
+        25% {
+          background-color: limegreen;
+        }
+        50% {
+          background-color: lightblue;
+        }
+        75% {
+          background-color: limegreen;
+        }
+        100% {
+          /* sono gli stati finali della mia animazione */
+          background-color: firebrick;
+        }
+      }
+
+      @keyframes box-moving {
+        0% {
+          transform: translateX(0px);
+        }
+
+        100% {
+          transform: translateX(300px);
+        }
+      }
+
+      @keyframes box-moving-circular {
+        0% {
+          transform: translateX(0px);
+        }
+
+        50% {
+          transform: translateX(300px);
+        }
+
+        100% {
+          transform: translateX(0px);
+        }
+      }
+
+      .ex-1 {
+        /* animation: nome durata curva-di-accelerazione ritardo numero-ripetizioni */
+        animation: change-color 5s linear 0s forwards;
+        /* questo sarebbe il colore a cui ritornerei finita l'animazione */
+        background-color: firebrick;
+      }
+
+      .ex-2 {
+        /* animation: nome durata curva-di-accelerazione ritardo numero-ripetizioni */
+        animation: change-color-circular 10s linear 0s infinite;
+      }
+
+      .ex-3 {
+        background-color: blue;
+        color: white;
+        animation: box-moving 2s linear 0s 1 forwards;
+      }
+
+      .ex-4 {
+        background-color: magenta;
+        color: white;
+        animation: box-moving-circular 4s linear 0s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>PROPRIETÀ ANIMATION</h1>
+    </header>
+    <main>
+      <section>
+        <h3>ESEMPI DI ANIMAZIONI</h3>
+        <article class="box ex-1">
+          <p>CAMBIO COLORE</p>
+        </article>
+        <article class="box ex-2">
+          <p>CAMBIO COLORE CIRCOLARE</p>
+        </article>
+        <article class="box ex-3">
+          <p>SPOSTAMENTO SX->DX</p>
+        </article>
+        <article class="box ex-4">
+          <p>SPOSTAMENTO SX->DX->SX</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
