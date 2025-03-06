@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Transform</title>
+    <style>
+      body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      .box {
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box p {
+        margin: 0;
+      }
+
+      .rotate {
+        background-color: green;
+        color: white;
+        transform: rotate(-45deg);
+        /* transform: rotate(315deg); */ /* stesso risultato */
+        /* il nostro box è finito sopra il testo :( */
+      }
+
+      .skew {
+        background-color: orange;
+        color: white;
+        transform: skew(303deg, 3deg);
+        box-shadow: 5px 5px 8px 5px rgba(200, 0, 50, 0.5);
+      }
+
+      .scale {
+        background-color: rebeccapurple;
+        color: white;
+        transform: scale(1.35);
+        /* il valore di scale 1.0 rappresenta le dimensioni originali */
+        /* un ingrandimento del 10% -> 1.1 */
+      }
+
+      .translate {
+        background-color: darkgrey;
+        color: white;
+        transform: translate(80px, -50px);
+        /* translate accetta due valore: x e y */
+        /* valori positivi di x --> destra */
+        /* valori negativi di x --> sinistra */
+        /* valori positivi di y --> basso */
+        /* valori negativi di y --> alto */
+      }
+
+      .multi {
+        background-color: cadetblue;
+        transform: rotate(45deg) scale(1.2);
+        /* questa è una rotazione + ingrandimento */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        La proprietà CSS "transform" permette di apportare delle trasformazioni
+        grafiche agli elementi HTML (immagini, contenitori, testi, titoli etc.)
+        "transform", al pari di "position", NON È UNO STRUMENTO DI IMPAGINAZIONE
+        -> un elemento trasformato viene RIMOSSO dal flow normale della pagina,
+        quindi va a sovrastrare potenzialmente altri elementi, il suo ingombro
+        non va a condizionare gli altri, la sua altezza non contribuisce più all'
+        altezza del contenitore etc. etc.
+    -->
+    <header>
+      <h1>PROPRIETÀ TRANSFORM</h1>
+    </header>
+    <main>
+      <section>
+        <h3>Transform: rotate</h3>
+        <article class="box rotate">
+          <p>ROTATE</p>
+        </article>
+      </section>
+      <section>
+        <h3>Transform: skew</h3>
+        <article class="box skew">
+          <p>SKEW</p>
+        </article>
+      </section>
+      <section>
+        <h3>Transform: scale</h3>
+        <article class="box scale">
+          <p>SCALE</p>
+        </article>
+      </section>
+      <section>
+        <h3>Transform: translate</h3>
+        <article class="box translate">
+          <p>TRANSLATE</p>
+        </article>
+      </section>
+
+      <section>
+        <h3>Trasformazioni multiple</h3>
+        <article class="box multi">
+          <p>MULTI</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

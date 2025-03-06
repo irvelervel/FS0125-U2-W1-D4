@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Transition</title>
+    <style>
+      body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      .box {
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .ex-1 {
+        background-color: orange;
+        /* per rallentare l'allungamento di questo elemento all'hover, devo applicare
+        la proprietà "transition"; però ATTENZIONE, la dovete applicare agli stili
+        NORMALI dell'elemento, NON nel blocco con lo pseudoselettore "hover" */
+        /* transition: proprietà durata curva-di-accelerazione ritardo */
+        transition: width 3s linear 0s;
+        /* transition: width 3s cubic-bezier(0, 1.325, 1, -0.325) 0s; */
+      }
+
+      .ex-1:hover {
+        /* questi stili verranno applicati a .ex-1 solamente quando il cursore
+        ci passa sopra */
+        width: 500px;
+      }
+
+      .ex-2 {
+        background-color: green;
+        color: white;
+        transition: all 3s linear 0s;
+      }
+
+      .ex-2:hover {
+        background-color: orange;
+        color: black;
+      }
+
+      .ex-3 {
+        background-color: red;
+        color: white;
+        transition: all 3s ease-out 0s;
+      }
+
+      .ex-3:hover {
+        background-color: green;
+        transform: translate(400px) rotate(1356deg);
+      }
+
+      .ex-4 {
+        background-color: darkred;
+        color: white;
+        /* DUE TRANSIZIONI DIVERSE */
+        /* QUELLA IN USCITA, SI APPLICA AL SELETTORE SENZA :HOVER */
+        transition: transform 2s linear 0s;
+      }
+
+      .ex-4:hover {
+        transform: translate(450px);
+        /* DUE TRANSIZIONI DIVERSE */
+        /* QUELLA IN ENTRATA, SI APPLICA AL SELETTORE CON :HOVER */
+        transition: transform 4s cubic-bezier(0, 1.325, 1, -0.325) 0s;
+      }
+
+      /* TRANSIZIONE UNICA IN/OUT: FUORI DALL'HOVER */
+      /* TRANSIZIONE DIVERSA IN/OUT:
+            IN: DENTRO HOVER
+            OUT: FUORI HOVER
+        */
+    </style>
+  </head>
+  <body>
+    <!-- Una "transition" è una transizione tra due stili applicati ad un elemento,
+     o anche ad una singola proprietà -->
+    <!-- una "transition" tipicamente si accompagna ad un evento di HOVER -->
+    <!-- La possiamo interpretare come un "rallentamento" dell'applicazione del CSS
+      all'hover -->
+    <!-- è possibile "rallentare" tutte gli stili in un colpo solo, oppure anche
+       le singole proprietà -->
+    <header>
+      <h1>PROPRIETÀ TRANSITION</h1>
+    </header>
+    <main>
+      <section>
+        <h3>BOX CHE SI ALLUNGA</h3>
+        <article class="box ex-1">
+          <p>MI ALLUNGO</p>
+        </article>
+      </section>
+      <section>
+        <h3>BOX CHE CAMBIA COLORE</h3>
+        <article class="box ex-2">
+          <p>CAMBIO COLOREEE</p>
+        </article>
+      </section>
+      <section>
+        <h3>BOX CHE CAMBIA COLORE, RUOTA E SI SPOSTA</h3>
+        <article class="box ex-3">
+          <p>SSJ4!</p>
+        </article>
+      </section>
+      <section>
+        <h3>BOX CON DUE TRANSIZIONI DIVERSE IN/OUT</h3>
+        <article class="box ex-4">
+          <p>GOKU</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
